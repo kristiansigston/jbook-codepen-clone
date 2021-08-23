@@ -1,0 +1,29 @@
+{
+  "name": "jsnote-ks-sg",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "dist"
+  ],
+  "bin": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "tsc --watch --preserveWatchOutput",
+    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --target=es6 --define:process.end.NODE_ENV=\\\"production\\\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@jsnote-ks-sg/local-client": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.1",
+    "esbuild": "^0.12.22",
+    "@jsnote-ks-sg/local-api": "^1.0.0",
+    "commander": "^8.1.0",
+    "typescript": "^4.3.5"
+  }
+}
